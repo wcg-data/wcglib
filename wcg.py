@@ -1,4 +1,5 @@
-
+import platform
+from log_utils import log
 
 class WCG:
     def get_os(self):
@@ -11,4 +12,7 @@ class WCG:
             return 'Mac'
         else:
             return 'Unknown'
+    
+
+l
         
