@@ -2,7 +2,32 @@ import platform
 import os
 import sys
 import glob
-from log_utils import logger
+import log_utils
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.edge.service import Service as EdgeService
+from selenium.webdriver.edge.options import Options as EdgeOptions
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from bs4 import BeautifulSoup
+from sqlalchemy import create_engine, text, delete, func
+from sqlalchemy import Table, MetaData, Column, Integer, String, DateTime, SmallInteger, Date
+from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import sessionmaker
+import re
+import pandas as pd
+
+
+script_path = os.path.abspath(__file__)
+dir_path = os.path.dirname(script_path)
+dir_name = os.path.basename(dir_path)
+
+# 使用log_utils中的日志对象
+log = log_utils.logger(dir_name)
 
 class WCGClass:
     def get_os(self):
@@ -72,5 +97,5 @@ class WCGClass:
         driver.get(url)
         log.info(f'loading web page: {url}')
         return driver
-l
+
         
