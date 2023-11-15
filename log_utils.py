@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import logging
 import sys, os
 
-def logger(run_dir):
-    logger = logging.getLogger(run_dir)
+script_path = os.path.abspath(__file__)
+dir_path = os.path.dirname(script_path)
+dir_name = os.path.basename(dir_path)
 
-    logger.setLevel(logging.INFO)
-    handler = logging.StreamHandler(sys.stdout)
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s : %(message)s')
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
+log = logging.getLogger(dir_name)
 
-    return logger
+log.setLevel(logging.INFO)
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s : %(message)s')
+handler.setFormatter(formatter)
+log.addHandler(handler)

@@ -2,7 +2,7 @@ import platform
 import os
 import sys
 import glob
-import log_utils
+from log_utils  import log
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -21,13 +21,6 @@ from sqlalchemy.orm import sessionmaker
 import re
 import pandas as pd
 
-
-script_path = os.path.abspath(__file__)
-dir_path = os.path.dirname(script_path)
-dir_name = os.path.basename(dir_path)
-
-# 使用log_utils中的日志对象
-log = log_utils.logger(dir_name)
 
 class WCGClass:
     def get_os(self):
