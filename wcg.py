@@ -32,7 +32,7 @@ class WCGClass:
         elif os_name == 'Darwin':
             return 'Mac'
         else:
-            return 'Unknown'
+            return 'Unknown OS'
     
     def get_project_dir(self, current_path):
         # 判断一个目录是否是项目的根目录。这里使用了一个简单的判定条件：根目录下是否存在一个名为".git"的目录。
@@ -52,6 +52,9 @@ class WCGClass:
             script_dir = parent_path
         return script_dir
     
+    def save_to_csv(self, df, csv_name):
+        df.to_csv(csv_name + '.csv', index=False)
+
     def regular_find_folder(self, base_path, pattern):
         # 使用 glob 模块来进行模糊匹配
         search_pattern = os.path.join(base_path, pattern)
