@@ -34,6 +34,24 @@ class WCGClass:
         else:
             return 'Unknown'
     
+    def get_project_dir(self, current_path):
+        # 判断一个目录是否是项目的根目录。这里使用了一个简单的判定条件：根目录下是否存在一个名为".git"的目录。
+        # 你可以根据你的项目特点修改这个条件。
+        def is_root(path):
+            return '.git' in os.listdir(path)
+
+        # 获取本.py脚本所在的目录的绝对路径
+        # script_absolute_path = os.path.abspath(__file__)
+        script_absolute_path = os.path.abspath(current_path)
+        script_dir = os.path.dirname(script_absolute_path)
+        # 从起始目录开始，递归地向上查找
+        while not is_root(script_dir):
+            parent_path = os.path.dirname(script_dir)
+            if parent_path == script_dir:
+                raise Exception("项目根目录没有找到")
+            script_dir = parent_path
+        return script_dir
+    
     def regular_find_folder(self, base_path, pattern):
         # 使用 glob 模块来进行模糊匹配
         search_pattern = os.path.join(base_path, pattern)
