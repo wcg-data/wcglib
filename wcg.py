@@ -73,7 +73,7 @@ class WCGClass:
             sys.exit(f"{base_path}下未找到该文件夹: {pattern}")  # 如果没有找到匹配项，则退出
 
     def set_driver(self, url, browser):
-s        project_dir = os.path.abspath(os.path.join(self.common_dir, "utils"))
+        project_dir = os.path.abspath(os.path.join(self.common_dir, "utils"))
         driver_path = os.path.join(project_dir, 'driver')
 
         browser_options = {
