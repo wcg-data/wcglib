@@ -66,7 +66,9 @@ class WCGClass:
 
     def set_driver(self, url, browser):
         # project_dir = self.get_project_dir()
-        project_dir = os.path.abspath("utils")
+        current_dir = os.getcwd()
+        common_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+        project_dir = os.path.abspath(os.path.join(common_dir, "utils"))
         driver_path = os.path.join(project_dir, 'driver')
 
         browser_options = {
