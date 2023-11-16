@@ -23,6 +23,13 @@ import pandas as pd
 
 
 class WCGClass:
+
+    def __init__(self):
+        # 获取所有仓库的公共目录
+        self.current_file_path = os.path.abspath(__file__)
+        self.current_dir = os.path.dirname(self.current_file_path)
+        self.common_dir = os.path.dirname(self.current_dir)
+
     def get_os(self):
         os_name = platform.system()
         if os_name == 'Windows':
@@ -52,8 +59,9 @@ class WCGClass:
             script_dir = parent_path
         return script_dir
     
-    def save_to_csv(self, df, csv_name):
-        df.to_csv(csv_name + '.csv', index=False)
+    def df2csv(self, df, csv_name):
+        df.to_csv(f'{csv_name}.csv', index=False)
+        return f'{csv_name}.csv'
 
     def regular_find_folder(self, base_path, pattern):
         # 使用 glob 模块来进行模糊匹配
@@ -65,10 +73,7 @@ class WCGClass:
             sys.exit(f"{base_path}下未找到该文件夹: {pattern}")  # 如果没有找到匹配项，则退出
 
     def set_driver(self, url, browser):
-        # project_dir = self.get_project_dir()
-        current_dir = os.getcwd()
-        common_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
-        project_dir = os.path.abspath(os.path.join(common_dir, "utils"))
+s        project_dir = os.path.abspath(os.path.join(self.common_dir, "utils"))
         driver_path = os.path.join(project_dir, 'driver')
 
         browser_options = {
