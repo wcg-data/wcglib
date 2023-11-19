@@ -1,8 +1,11 @@
-import platform
 import os
 import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# 将当前工作目录更改为脚本所在的目录
+sys.path.append(current_dir)
+import platform
 import glob
-from log_utils  import log
+from log_utils import log
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
