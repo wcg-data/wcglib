@@ -2,7 +2,7 @@ import platform
 import os
 import sys
 import glob
-# from log_utils  import log
+from log_utils  import log
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
