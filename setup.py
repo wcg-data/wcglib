@@ -12,12 +12,12 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'mypackage'
+NAME = 'wcglib'
 DESCRIPTION = 'My short description for my project.'
 URL = 'https://github.com/wcg-data/wcglib.git'
 EMAIL = 'vdr573045093@hotmail.com'
 AUTHOR = 'Vidor Joyce'
-REQUIRES_PYTHON = '>=3.6.0'
+REQUIRES_PYTHON = '>=3.7.0'
 VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
@@ -103,9 +103,9 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    # packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
+    packages=find_packages(exclude=["wcg.*", "log_utils"]),
     # If your package is a single module, use this instead of 'packages':
-    py_modules=['wcgpackage'],
+    # py_modules=['wcg'],
 
     # entry_points={
     #     'console_scripts': ['mycli=mymodule:cli'],
@@ -120,9 +120,10 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy'
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10'
     ],
     # $ setup.py publish support.
     cmdclass={
