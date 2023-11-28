@@ -17,7 +17,7 @@ DESCRIPTION = 'My short description for my project.'
 URL = 'https://github.com/wcg-data/wcglib.git'
 EMAIL = 'vdr573045093@hotmail.com'
 AUTHOR = 'Vidor Joyce'
-REQUIRES_PYTHON = '>=3.10.0'
+REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
@@ -103,9 +103,9 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
+    # packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
-    # py_modules=['mypackage'],
+    py_modules=['wcgpackage'],
 
     # entry_points={
     #     'console_scripts': ['mycli=mymodule:cli'],
