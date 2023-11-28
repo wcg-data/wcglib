@@ -13,7 +13,7 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = 'wcglib'
-DESCRIPTION = 'My short description for my project.'
+DESCRIPTION = 'Keep It Simple, Stupid'
 URL = 'https://github.com/wcg-data/wcglib.git'
 EMAIL = 'vdr573045093@hotmail.com'
 AUTHOR = 'Vidor Joyce'
