@@ -122,4 +122,30 @@ class WCGClass:
         log.info(f'loading web page: {url}')
         return driver
 
-        
+
+ # 创建类的实例
+wcgobj = WCGClass()
+
+def wcgobj_method(method_name):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            method = getattr(wcgobj, method_name)
+            return method(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@wcgobj_method('get_os')
+def get_os():
+    pass
+
+@wcgobj_method('get_project_dir')
+def get_project_dir(current_path):
+    pass
+
+@wcgobj_method('df2csv')
+def df2csv(df, csv_name):
+    pass
+
+@wcgobj_method('regular_find_folder')
+def regular_find_folder(base_path, pattern):
+    pass
