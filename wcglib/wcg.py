@@ -149,3 +149,7 @@ def df2csv(df, csv_name):
 @wcgobj_method('regular_find_folder')
 def regular_find_folder(base_path, pattern):
     pass
+
+@wcgobj_method('set_driver')
+def set_driver(url, browser):
+    pass
