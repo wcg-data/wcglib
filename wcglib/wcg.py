@@ -45,7 +45,7 @@ class WCGClass:
             return 'Unknown OS'
     
     def get_project_dir(self, current_path):
-        # 判断一个目录是否是项目的根目录。这里使用了一个简单的判定条件：根目录下是否存在一个名为".git"的目录。
+        # 判断一个目录是否是repo的根目录,并返回其父目录。这里使用了一个简单的判定条件：根目录下是否存在一个名为".git"的目录。
         # 你可以根据你的项目特点修改这个条件。
         def is_root(path):
             return '.git' in os.listdir(path)
